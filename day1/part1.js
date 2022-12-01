@@ -2297,11 +2297,7 @@ const resolve = (input) =>
   Math.max(
     ...input
       .split('\n\n')
-      .map((e) => e.split('\n'))
-      .reduce((acc, curr) => {
-        acc.push(curr.reduce((a, b) => a + Number(b), 0));
-        return acc;
-      }, [])
+      .map((e) => e.split('\n').reduce((a, b) => a + Number(b), 0))
   );
 
 const test = resolve(testCase);

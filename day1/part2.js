@@ -2296,11 +2296,7 @@ const testCase = `1000
 const resolve = (input) => {
   const sortArray = input
     .split('\n\n')
-    .map((e) => e.split('\n'))
-    .reduce((acc, curr) => {
-      acc.push(curr.reduce((a, b) => a + Number(b), 0));
-      return acc;
-    }, [])
+    .map((e) => e.split('\n').reduce((a, b) => a + Number(b), 0))
     .sort((a, b) => b - a);
   return sortArray[0] + sortArray[1] + sortArray[2];
 };
