@@ -2303,7 +2303,7 @@ const resolve = (input) => {
 
 const test = resolve(testCase);
 
-console.assert(test === 24000, 'Test case failed');
+console.assert(test === 'PUT HERE TEST SOLUTION', 'Test case failed');
 
 const output = resolve(inputCase);
 
