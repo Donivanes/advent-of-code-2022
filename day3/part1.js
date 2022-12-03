@@ -359,13 +359,13 @@ const charNumbers = {
 const resolve = (input) =>
   input
     .split('\n')
-    .map((item) => ({
-      comp1: [...item.slice(0, item.length / 2)],
-      comp2: [...item.slice(item.length / 2)],
-    }))
+    .map((item) => [
+      [...item.slice(0, item.length / 2)],
+      [...item.slice(item.length / 2)],
+    ])
     .reduce(
-      (acc, curr) =>
-        acc + charNumbers[curr.comp1.find((el) => curr.comp2.includes(el))],
+      (acc, [comp1, comp2]) =>
+        acc + charNumbers[comp1.find((el) => comp2.includes(el))],
       0
     );
 
